@@ -2,8 +2,8 @@
 
 Date: 2026-08-30
 Scope: macOS app (`macos/Sources/`) and GTK Linux app (`crates/trace-commons-contributor-gtk/`)
-Lens: Can a user connect once, forget about it, and trust the reward arrives — with the
-app doing the deciding for them?
+Lens: Can a user connect once, consent, and get the reward — with the app doing the
+deciding for them?
 
 ## Verdict
 
@@ -11,8 +11,8 @@ The app is currently built for the *opposite* user. Its entire design center is
 contributor agency — "nothing is sent unless you say so" — expressed as a per-trace
 review gate, six onboarding decisions, and eight-plus configuration knobs. That is a
 coherent product, but it is a **high-agency, high-attention** product. The user you
-describe — connect once, delegate the judgment, trust the payout — is not served by the
-default path and on macOS cannot reach it at all.
+describe — connect, consent, delegate the judgment, and get the reward — is not served by
+the default path and on macOS cannot reach it at all.
 
 The gap is not polish. It is a philosophical default that has to be inverted: **consent to
 submit should be the last decision the user makes.** They connect, they consent, and traces
@@ -50,9 +50,10 @@ So the closest thing to "forget" is: finish onboarding, go into Settings, arm ea
 one at a time, and click through a warning designed to make you reconsider. That is the
 delegation path presented as a hazard.
 
-### 3. The reward is opaque exactly where trust is formed
+### 3. The reward is opaque exactly where it should land
 
-The user's premise is "trust they get the reward." The app actively undercuts that:
+The user's premise is "connect, consent, and get the reward." The app actively undercuts
+that:
 
 - Credit appears **only on the History page**, never in the moment of contributing. The
   submission toast says *"Approved 47. Scrubbing removed 213. 3 flagged."* — it reports
@@ -64,8 +65,9 @@ The user's premise is "trust they get the reward." The app actively undercuts th
   you want the commons to exist."*
 
 That last line is honest and, for the current audience, probably right. But it is the exact
-opposite of "connect once and trust the reward shows up." You cannot ask a user to trust a
-reward while the flagship copy tells them there is no reward and none is promised.
+opposite of "connect, consent, and get the reward." You cannot ask a user to consent in
+exchange for a reward while the flagship copy tells them there is no reward and none is
+promised.
 
 ### 4. Configuration surface is broad
 
@@ -126,7 +128,7 @@ pause anytime." Keep the undo window as the safety net instead of pre-review.
   scored" with a tap-through to History.
 - Notify (respecting digest cadence) when credit settles: "Your contributions were accepted
   into the commons."
-- If credit truly cannot be promised yet, the trust story has to rest on *acceptance* and
+- If credit truly cannot be promised yet, the reward story has to rest on *acceptance* and
   *impact* ("in the commons") rather than payout — surface those proactively, not only on a
   page the user has to go find.
 
@@ -154,8 +156,8 @@ decision, not new plumbing.
 ## Bottom line
 
 Today the app asks the user to *decide*, over and over, and tells them not to expect a
-reward. The user you want to serve makes exactly one decision — **consent** — and trusts the
-app to do the rest. Consent should be the moment of delegation: connect, consent, done. No
+reward. The user you want to serve makes exactly one decision — **consent** — and gets the
+reward for it. Consent should be the moment of delegation: connect, consent, done. No
 Settings, no arming, no per-trace gate. The machinery to serve them already exists
 (`auto_upload`, local scrubbing, the undo window, credit records) — it is gated, hidden, or,
 on macOS, switched off. The work is mostly inverting defaults and closing the reward loop,
