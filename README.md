@@ -14,7 +14,9 @@ coherent product, but it is a **high-agency, high-attention** product. The user 
 describe — connect once, delegate the judgment, trust the payout — is not served by the
 default path and on macOS cannot reach it at all.
 
-The gap is not polish. It is a philosophical default that has to be inverted.
+The gap is not polish. It is a philosophical default that has to be inverted: **consent to
+submit should be the last decision the user makes.** They connect, they consent, and traces
+flow — no Settings trip, no per-project arming, no per-trace review gate.
 
 ## What stands between "connect" and "forget" today
 
@@ -85,26 +87,38 @@ Ordered by leverage for the connect-once-and-forget user. None require abandonin
 high-agency mode — the goal is to make delegation the *default* and review the *opt-in*,
 inverting today's polarity.
 
-### A. Make "Trust it" a first-class onboarding choice (highest leverage)
+### A. Consent *is* the submission decision (highest leverage)
 
-Add one screen after Connect: **"How hands-on do you want to be?"** with two options:
+Onboarding should be two acts: **Connect**, then **Consent**. Granting the consent scopes
+is the authorization — the user is agreeing that traces within those scopes may be scrubbed
+and contributed. After consent, traces flow automatically. There is no third act, no
+per-project arming, and no reason to open Settings to start contributing.
 
-- **Trust it (recommended):** the app watches, scrubs, and contributes automatically. You
-  can review anytime, but you don't have to. → arms all discovered projects, sets sensible
-  defaults, skips the roots/projects/scan decision screens.
-- **Review each one:** today's behavior.
+Concretely:
 
-This single fork lets the target user finish onboarding in two taps (Connect, Trust it) and
-collapses screens 3–6 into defaults. It also resolves the platform split by making
-delegation a supported, non-scary path on *both* front-ends.
+- Consent screen carries the whole contract in one place: "With these permissions, Trace
+  Commons will scrub each session locally and contribute it automatically. You can pause or
+  stop anytime." Ticking consent = you're in.
+- Drop the roots/projects/scan decision screens from the required path. Discover roots
+  automatically; watch all discovered projects by default; use local scrubbing unless the
+  operator's config requires more. These stop being onboarding questions.
+- Delete "arming" as a concept the user has to perform. Consent already armed it. Settings
+  becomes a place to *narrow* (pause, ignore a project, tighten scopes) — never a required
+  stop to *start*.
 
-### B. Reframe auto-contribution from hazard to feature
+This collapses onboarding to two taps and makes the mental model honest: you consent once,
+and the app does the deciding from there. It also resolves the platform split — both
+front-ends implement the same "consent means contribute" contract.
 
-The GTK arming dialog and the macOS refusal both treat delegation as dangerous. If the
-local scrubbing is trustworthy enough to ship, it is trustworthy enough to be the default —
-say so. Replace *"You won't review them first"* with what the app does *for* the user:
-"We scrub every trace locally before it leaves your machine. You can spot-check anytime in
-History." Keep the undo window as the safety net instead of pre-review.
+### B. Reframe auto-contribution from hazard to the point of consenting
+
+The GTK arming dialog and the macOS refusal both treat delegation as dangerous — but
+delegation is exactly what the user consented to. If local scrubbing is trustworthy enough
+to ship, it is trustworthy enough to be what consent authorizes. Drop the alarming
+per-project confirmation entirely; the consent grant already covered it. Replace
+*"You won't review them first"* with what the app does *for* the user, stated once at
+consent: "We scrub every session locally before anything leaves your machine. Review or
+pause anytime." Keep the undo window as the safety net instead of pre-review.
 
 ### C. Close the reward loop in the moment
 
@@ -140,7 +154,9 @@ decision, not new plumbing.
 ## Bottom line
 
 Today the app asks the user to *decide*, over and over, and tells them not to expect a
-reward. The user you want to serve wants to *decide once* and *trust the reward*. The
-machinery to serve them already exists (`auto_upload`, local scrubbing, the undo window,
-credit records) — it is gated, hidden, or, on macOS, switched off. The work is mostly
-inverting defaults and closing the reward loop, not building new capability.
+reward. The user you want to serve makes exactly one decision — **consent** — and trusts the
+app to do the rest. Consent should be the moment of delegation: connect, consent, done. No
+Settings, no arming, no per-trace gate. The machinery to serve them already exists
+(`auto_upload`, local scrubbing, the undo window, credit records) — it is gated, hidden, or,
+on macOS, switched off. The work is mostly inverting defaults and closing the reward loop,
+not building new capability.
