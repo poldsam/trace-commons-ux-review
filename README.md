@@ -50,24 +50,26 @@ So the closest thing to "forget" is: finish onboarding, go into Settings, arm ea
 one at a time, and click through a warning designed to make you reconsider. That is the
 delegation path presented as a hazard.
 
-### 3. The reward is opaque exactly where it should land
+### 3. The reward is clear — credits — but the app buries and disclaims it
 
-The user's premise is "connect, consent, and get the reward." The app actively undercuts
-that:
+The reward is not vague: you earn credit points for each contribution, scored on how novel
+and information-rich a trace is. That is a clean, concrete deal — "connect, consent, and get
+the reward" — and it should be front and center. Instead the app hides the credits and then
+talks the user out of them:
 
 - Credit appears **only on the History page**, never in the moment of contributing. The
   submission toast says *"Approved 47. Scrubbing removed 213. 3 flagged."* — it reports
-  privacy mechanics, not reward.
+  privacy mechanics, not the credits you just earned.
 - There is no notification when credit settles. The user must re-open the app and navigate
-  to History to discover whether anything happened.
-- The headline copy tells them not to expect a reward: *"credit is a record, not a
-  currency: there is no payout, no token, no exchange rate, and no date… Contribute because
-  you want the commons to exist."*
+  to History to see what they earned.
+- The headline copy actively downplays the reward: *"credit is a record, not a currency:
+  there is no payout, no token, no exchange rate, and no date… Contribute because you want
+  the commons to exist."*
 
-That last line is honest and, for the current audience, probably right. But it is the exact
-opposite of "connect, consent, and get the reward." You cannot ask a user to consent in
-exchange for a reward while the flagship copy tells them there is no reward and none is
-promised.
+That copy is the exact opposite of "connect, consent, and get the reward." Credits *are* the
+reward — the app should say so plainly and show them proudly, not hedge them into a footnote.
+You cannot ask a user to consent in exchange for a reward while the flagship copy tells them
+the reward barely counts.
 
 ### 4. Configuration surface is broad
 
